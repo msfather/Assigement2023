@@ -7,11 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.app.pages.added;
 import com.app.pages.launch;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Apptest {
-  WebDriver driver;
+  
+WebDriver driver;
   launch ch;
   added add;
   @BeforeMethod
@@ -22,6 +24,7 @@ public class Apptest {
       add=new added(driver);
        driver.manage().window().maximize();
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); 
+       
        driver.get("https://www.myntra.com/");
 	}
   @Test
@@ -32,6 +35,8 @@ public class Apptest {
  @Test
  public void loginpage() throws InterruptedException {
 	 add.login();
+	 
+	//*[@id="desktopSearchResults"]/div[2]/section/ul/li[2]/a/div[1]/div/div/div/picture/img
  }
   
 }
